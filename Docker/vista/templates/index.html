@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tubos Y Filtros - jAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/desing.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Arquitectura de Tuberias y Filtros</h1>
+        <h2>Ingeniería de Sistemas - Unicomfacauca</h2>
+        <form method="POST" class="input-form">
+            <label for="texto">Ingresa el texto a procesar:</label><br>
+            <textarea id="texto" name="texto" rows="4" class="input-text">{{ texto_inicial or '' }}</textarea><br>
+            <input type="submit" value="Procesar Texto" class="submit-button">
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if resultados %}
+            <div class="canvas-container">
+                <h2>Visualización del Pipeline:</h2>
+                <canvas id="pipelineCanvas" width="800" height="250"></canvas>
+            </div>
+
+            <div class="resultados">
+                <h2>Resultados del Pipeline (Texto):</h2>
+                {% for paso, resultado in resultados.items() %}
+                    <div class="resultado-paso">
+                        <h3>{{ paso }}:</h3>
+                        <pre class="resultado-texto">{{ resultado }}</pre>
+                    </div>
+                {% endfor %}
+                <hr class="separador">
+                <div class="resultado-final">
+                    <h2>Resultado Final:</h2>
+                    <pre class="resultado-texto">{{ texto_final }}</pre>
+                </div>
+            </div>
+
+            <script>
+                window.pipelineData = {{ resultados|tojson|safe }};
+            </script>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/pipeline.js') }}" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('pipelineCanvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                if (ctx) {
+                    ctx.fillStyle = '#f4f4f4';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                } else {
+                    console.error('No se pudo obtener el contexto del canvas.');
+                }
+            } else {
+                console.error('No se encontró el elemento canvas con id pipelineCanvas.');
+            }
+        });
+    </script>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p class="footer-item"><strong>Estudiantes:</strong> Jainer Johany Chocue Viluche, Freyder Aldevan Pacho Dizu</p>
+            <p class="footer-item"><strong>Programa:</strong> Ingeniería de Sistemas</p>
+            <p class="footer-item"><strong>Materia:</strong> Arquitectura de Software</p>
+            <p class="footer-item"><strong>Año:</strong> 2025</p>
+            <p class="footer-item"><strong>Contacto:</strong> <a href="mailto:info@cyberdynesystems.com">info@cyberdynesystems.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

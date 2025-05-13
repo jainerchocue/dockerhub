@@ -1,0 +1,145 @@
+/* Estilos generales */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+/* Encabezados */
+h1, h2 {
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #0056b3;
+}
+
+/* Formulario */
+.input-form {
+    margin: 20px 0;
+}
+
+.input-text {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #004494;
+}
+
+/* Resultados */
+.resultados {
+    margin-top: 20px;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+.resultado-paso {
+    margin-bottom: 15px;
+}
+
+.resultado-paso h3 {
+    margin-top: 0;
+    color: #555;
+}
+
+.resultado-texto {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.separador {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.resultado-final {
+    margin-top: 20px;
+}
+
+/* Canvas */
+.canvas-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+canvas {
+    display: block;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+/* Error */
+.error {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ffcdd2;
+    border-radius: 4px;
+    background-color: #ffebee;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #50eeff;/* color de pie principal*/
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 2px solid #0056b3;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-item {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.footer-item a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.footer-item a:hover {
+    text-decoration: underline;
+}
+
+
+
